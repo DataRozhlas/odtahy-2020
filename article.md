@@ -63,7 +63,7 @@ Z dat nelze vyčíst, u kterých přestupků strážníci využívají _technick
 
 „Botička zvyšuje vymahatelnost, řidič ji nezahodí jako lístek,“ dodává.
 
-## XXX
+## 2015 vs. 2019. Více přestupků, méně odtahů
 
 Stejná data máme k dispozici také za rok 2015. Lze tedy srovnat, jak se během čtyř let přístup strážníků změnil.
 
