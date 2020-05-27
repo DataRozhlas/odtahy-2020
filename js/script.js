@@ -163,6 +163,18 @@ var prestupkyrokyodtahy = [
   [10,14]
 ];
 
+var vjezdyroky = ['01/2019', '02/2019', '03/2019', '04/2019', '05/2019', '06/2019', '07/2019', '08/2019', '09/2019', '10/2019', '11/2019', '12/2019', '01/2020'];
+
+var vjezdydata = [206, 284, 188, 112, 111, 70, 27, 2, 7, 6, 653, 77, 237];
+
+var prestupkyroky = ['04/2019', '05/2019', '06/2019', '07/2019', '08/2019', '09/2019', '10/2019', '11/2019', '12/2019', '01/2020'];
+
+var prestupkydata = [13, 513, 70, 252, 927, 1237, 576, 951, 599, 1180];
+
+var povolenikat = ['Vjezdové pro činnost', 'Vjezdové vlastnické/ZTP', 'Vjezdové běžné', 'Rezident', 'Vjezdové pro zásobování', 'Abonent', 'Taxi', 'Vjezdové pro školu', 'Vjezdové migrace'];
+
+var povolenidata = [5549, 2917, 1773, 1119, 962, 487, 455, 190, 27]
+
 Highcharts.chart('celkem', {
     chart: {
         type: 'bar'
@@ -326,7 +338,7 @@ Highcharts.chart('podil', {
     tooltip: {
         formatter: function () {
             return '<span style="font-size: 10px">' + this.x + '</span><br/>' +
-                   '<b>' + this.y + ' % odtahů</b><br/>' +
+                   '<b>' + this.y + ' % řešeno odtahem</b><br/>' +
                    '<span style="font-size: 12px; font-weight: bold; color:' + colors[9] + ';"> ▪ </span>' + this.point.prestupky + ' přestupků<br/>' +
                    '<span style="font-size: 12px; font-weight: bold; color:' + colors[8] + ';"> ▪ </span>' + this.point.odtahy + ' odtahů'
         }
@@ -475,6 +487,135 @@ Highcharts.chart('reseni', {
         data: resenidata[15],
         color: colors[14],
         visible: false
+    }]
+});
+
+Highcharts.chart('vjezdy', {
+    chart: {
+        type: 'column'
+    },
+
+    title: {
+        text: 'Neoprávněné vjezdy do pěší zóny'
+    },
+
+    subtitle: {
+        text: 'Brno, 2019'
+    },
+
+    xAxis: {
+        categories: vjezdyroky
+    },
+
+    yAxis: {
+        title: {
+            text: ''
+        }
+    },
+
+    exporting: {
+        enabled: false
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    credits: {
+        href: '',
+        text: 'Zdroj: Magistrát města Brna, Odbor dopravy'
+    },
+
+    series: [{
+        name: 'Odhalené neoprávněné vjezdy',
+        data: vjezdydata,
+        color: colors[8]
+    }]
+});
+
+Highcharts.chart('prestupky', {
+    chart: {
+        type: 'column'
+    },
+
+    title: {
+        text: 'Přestupky v pěší zóně odhalené monitorovacím vozidlem'
+    },
+
+    subtitle: {
+        text: 'Brno, 2019'
+    },
+
+    xAxis: {
+        categories: prestupkyroky
+    },
+
+    yAxis: {
+        title: {
+            text: ''
+        }
+    },
+
+    exporting: {
+        enabled: false
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    credits: {
+        href: '',
+        text: 'Zdroj: Magistrát města Brna, Odbor dopravy'
+    },
+
+    series: [{
+        name: 'Počet přestupků',
+        data: prestupkydata,
+        color: colors[9]
+    }]
+});
+
+Highcharts.chart('povoleni', {
+    chart: {
+        type: 'bar'
+    },
+
+    title: {
+        text: 'Oprávnění k vjezdu do pěší zóny'
+    },
+
+    subtitle: {
+        text: 'Brno, k 13.11.2019'
+    },
+
+    xAxis: {
+        categories: povolenikat
+    },
+
+    yAxis: {
+        title: {
+            text: ''
+        }
+    },
+
+    exporting: {
+        enabled: false
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    credits: {
+        href: '',
+        text: 'Zdroj: Magistrát města Brna, Odbor dopravy'
+    },
+
+    series: [{
+        name: 'Počet oprávnění',
+        data: povolenidata,
+        color: colors[9]
     }]
 });
 
